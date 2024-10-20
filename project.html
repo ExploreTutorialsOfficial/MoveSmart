@@ -9,11 +9,18 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" />
   <script src="project.js" defer></script>
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
-  <div class="main">
+ 
+  <a href="index.html"> 
+  <button id="gobackbtn">
+    <i class="fas fa-arrow-left"></i>
+</button>
+</a>
+    <div class="main">
   <div class="fitness-form">
     <h2>Get Your Personalized Plan</h2>
     <label for="fitness-goal">Fitness Goal:</label>
@@ -47,9 +54,12 @@
     <div id="response" class="response"></div>
     
   </div>
-    </div>
-    <!-- <img src="img.svg" class="back-button" height="60px" width="60px"> -->
     
+  <button id="refreshBtn" onclick="refreshPage()">
+    <i class="fas fa-sync"></i>
+</button>
+
+    </div> 
 </body>
 
 </html>
