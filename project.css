@@ -14,6 +14,19 @@
   align-items: center;
 }
 
+body{
+  background: #E3F2FD;
+}
+
+#gobackbtn{
+  margin: 20px;
+  border-radius: 30%;
+}
+
+#gobackbtn a{
+  color: #ffff;
+  text-decoration: none;
+}
 
 .fitness-form {
   background: #fff;
@@ -53,3 +66,4 @@ button {
   border-radius: 4px;
   white-space: pre-wrap; 
 }
+
