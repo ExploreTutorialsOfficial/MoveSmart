@@ -9,7 +9,7 @@ getPlanBtn.addEventListener("click", async () => {
   const gender = document.getElementById("gender").value;
   const health = document.getElementById("health").value;
 
-  const userMessage = `I'm a ${diet} wanting to ${fitnessGoal} of age ${age} weighing ${weight} kgs and of gender ${gender}. ${health}. Give me the perfect diet plan, tailored workout suggestions, nutritional advice, and progress tracking according to my gender, weight, age, diet, fitness goal and especially health condition. (dont send any message related to health condition if not specified and no unhealthy foods. and also fish is not considered vegetarian)`;
+  const userMessage = `I'm a pure ${diet} wanting to ${fitnessGoal} of age ${age} weighing ${weight} kgs and of gender ${gender}. ${health}. Give me the perfect diet plan, tailored workout suggestions, nutritional advice, and progress tracking according to my gender, weight, age, diet, fitness goal and especially health condition. (dont send any message related to health condition if not specified and no unhealthy foods. and also fish is not considered vegetarian)`;
 
   responseDiv.textContent = "Loading... Just a second..."; 
 
