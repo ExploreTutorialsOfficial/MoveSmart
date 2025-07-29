@@ -22,8 +22,8 @@ getPlanBtn.addEventListener("click", async () => {
 
 const getRecommendations = async (message) => {
 
-  const API_KEY = "AIzaSyDDugJTzKAhO86KSSHeCV0D7zFjOvgjhcg"; 
-  const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
+  const API_KEY = "AIzaSyCh-1USGwarweT-Wd89ojNk_NQNRkP7hdk"; 
+  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
   const requestOptions = {
     method: "POST",
