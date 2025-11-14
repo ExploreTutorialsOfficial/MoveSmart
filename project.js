@@ -31,12 +31,12 @@ const getRecommendations = async (message) => {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${API_KEY}`
     },
-    body: JSON.stringify({
-      model: "llama-3.1-70b-versatile",   // UPDATED MODEL
-      messages: [
-        { role: "user", content: message }
-      ]
-    }),
+body: JSON.stringify({
+  model: "llama-3.1-8b-instant",
+  messages: [
+    { role: "user", content: message }
+  ]
+}),
   };
 
   try {
@@ -55,3 +55,4 @@ const getRecommendations = async (message) => {
 function refreshPage() {
   location.reload(); // Reload the current page
 }
+
