@@ -22,7 +22,7 @@ getPlanBtn.addEventListener("click", async () => {
 
 const getRecommendations = async (message) => {
 
-  const API_KEY = "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"; //USES GROQ API
+  const API_KEY = "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"; 
   const API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
   const requestOptions = {
@@ -32,7 +32,7 @@ const getRecommendations = async (message) => {
       "Authorization": `Bearer ${API_KEY}`
     },
     body: JSON.stringify({
-      model: "llama3-70b-8192",
+      model: "llama-3.1-70b-versatile",   // UPDATED MODEL
       messages: [
         { role: "user", content: message }
       ]
@@ -55,4 +55,3 @@ const getRecommendations = async (message) => {
 function refreshPage() {
   location.reload(); // Reload the current page
 }
-
