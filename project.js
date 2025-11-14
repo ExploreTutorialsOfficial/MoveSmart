@@ -22,17 +22,20 @@ getPlanBtn.addEventListener("click", async () => {
 
 const getRecommendations = async (message) => {
 
-  const API_KEY = "AIzaSyCh-1USGwarweT-Wd89ojNk_NQNRkP7hdk"; 
-  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+  const API_KEY = "sk-cb743e45922d4934bc14ca7e71ba94c5"; 
+  const API_URL = "https://api.deepseek.com/chat/completions";
 
   const requestOptions = {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { 
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${API_KEY}`
+    },
     body: JSON.stringify({
-      contents: [{
-        role: "user",
-        parts: [{ text: message }]
-      }]
+      model: "deepseek-chat",
+      messages: [
+        { role: "user", content: message }
+      ]
     }),
   };
 
@@ -41,7 +44,9 @@ const getRecommendations = async (message) => {
     const data = await response.json();
     if (!response.ok) throw new Error(data.error.message);
 
-    return data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\n/g, '\n\n');
+    return data.choices[0].message.content
+      .replace(/\*\*(.*?)\*\*/g, '$1')
+      .replace(/\n/g, '\n\n');
   } catch (error) {
     return `Error: ${error.message}`;
   }
