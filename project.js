@@ -22,8 +22,8 @@ getPlanBtn.addEventListener("click", async () => {
 
 const getRecommendations = async (message) => {
 
-  const API_KEY = "sk-cb743e45922d4934bc14ca7e71ba94c5"; 
-  const API_URL = "https://api.deepseek.com/chat/completions";
+  const API_KEY = "YOUR_GROQ_API_KEY_HERE"; 
+  const API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
   const requestOptions = {
     method: "POST",
@@ -32,7 +32,7 @@ const getRecommendations = async (message) => {
       "Authorization": `Bearer ${API_KEY}`
     },
     body: JSON.stringify({
-      model: "deepseek-chat",
+      model: "llama3-70b-8192",
       messages: [
         { role: "user", content: message }
       ]
@@ -42,7 +42,7 @@ const getRecommendations = async (message) => {
   try {
     const response = await fetch(API_URL, requestOptions);
     const data = await response.json();
-    if (!response.ok) throw new Error(data.error.message);
+    if (!response.ok) throw new Error(data.error?.message || "API error");
 
     return data.choices[0].message.content
       .replace(/\*\*(.*?)\*\*/g, '$1')
