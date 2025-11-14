@@ -22,7 +22,7 @@ getPlanBtn.addEventListener("click", async () => {
 
 const getRecommendations = async (message) => {
 
-  const API_KEY = "YOUR_GROQ_API_KEY_HERE"; 
+  const API_KEY = "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"; //USES GROQ API
   const API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
   const requestOptions = {
@@ -55,3 +55,4 @@ const getRecommendations = async (message) => {
 function refreshPage() {
   location.reload(); // Reload the current page
 }
+
